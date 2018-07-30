@@ -1,7 +1,6 @@
 import React from "react";
 import {
     Alignment,
-    Button,
     Navbar,
     NavbarDivider,
     NavbarGroup,
@@ -15,7 +14,6 @@ class NavbarWrapper extends React.PureComponent {
 		    <NavbarGroup align={Alignment.LEFT}>
 		        <NavbarHeading>React Test</NavbarHeading>
 		        <NavbarDivider />
-		        <Button className="bp3-minimal" text="Home" />
 		    </NavbarGroup>
 		</Navbar>);
 	}

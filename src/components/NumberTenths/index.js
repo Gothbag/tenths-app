@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Classes } from "@blueprintjs/core";
 
 import TenthCard from "../TenthCard";
 
@@ -13,9 +14,9 @@ class NumberTenths extends React.PureComponent {
 
 	render() {
 		const { props: { numberTenths }, renderTenth } = this;
-		return (<div>
+		return (<ul className={Classes.LIST}>
 			{numberTenths.map(renderTenth)}
-		</div>);
+		</ul>);
 	}
 }
 

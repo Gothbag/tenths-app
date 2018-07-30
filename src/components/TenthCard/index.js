@@ -2,19 +2,24 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Card } from "@blueprintjs/core";
 
-class Tenth extends React.PureComponent {
+import "./TenthCard.css";
+
+class TenthCard extends React.PureComponent {
 
 	static propTypes = {
-    	numberTenths: PropTypes.arrayOf(PropTypes.number).isRequired
+		quantity: PropTypes.number.isRequired,
+    	val: PropTypes.number.isRequired
 	}
 
 	render() {
 		const { props: { val, quantity } } = this;
-		return (<Card>
-		    <h5>Tenth {val}</h5>
-		    <p>{quantity}</p>
-		</Card>);
+		return (<li className="tenth">
+			<Card>
+			    <h4>Tenth {val}</h4>
+			    <p>{quantity}</p>
+			</Card>
+		</li>);
 	}
 }
 
-export default Tenth;
+export default TenthCard;

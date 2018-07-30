@@ -16,8 +16,8 @@ export const numberTenthsSelector = createSelector(
 			return tenths.reduce((tenthArr, tenth, ind) => {
 				tenthArr[tenth.val] += 1;
 				return tenthArr;
-			}, tenZeroArr);
+			}, [...tenZeroArr]);
 		}
-		return tenZeroArr;
+		return [...tenZeroArr];
 	} 
 );

@@ -19,5 +19,4 @@ const mapDispatchToProps = dispatch => ({
     addTenth: tenth => dispatch(addElement(tenth, TENTHS))
 }); 
 
-
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

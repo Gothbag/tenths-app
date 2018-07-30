@@ -1,7 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Cell, Column, Table } from "@blueprintjs/table";
+import { Classes } from "@blueprintjs/core";
 import moment from "moment";
+
+import "./TenthTable.css";
 
 import { listConsts } from "../../reducers/lists";
 
@@ -23,7 +26,7 @@ class TenthTable extends React.PureComponent {
 
 	render() {
 		const { props: { [TENTHS]: tenths }, timeCellRenderer, valCellRenderer } = this;
-		return (<Table numRows={tenths.length}>
+		return (<Table numRows={tenths.length} columnWidths={[300, 800]} className={Classes.HTML_TABLE}>
 		    <Column name="Time" cellRenderer={timeCellRenderer}/>
 		    <Column name="Tenth of a second" cellRenderer={valCellRenderer}/>
 		</Table>);

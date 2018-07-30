@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import { noop } from "lodash";
 import { Button } from "@blueprintjs/core";
 import moment from "moment";
+import { Colors } from "@blueprintjs/core";
+
+import "./Home.css";
 
 import TenthTable from "../TenthTable";
 import NumberTenths from "../NumberTenths";
@@ -34,7 +37,9 @@ class Home extends React.PureComponent {
 	render() {
 		const { handleAddTenth, props: { numberTenths, [TENTHS]: tenths } } = this;
 		return (<div>
-			<Button onClick={handleAddTenth} text="Get a Tenth!"/>
+			<div className="add-tenth-row" large>
+				<Button onClick={handleAddTenth} text="Get a Tenth!" style={{background:Colors.BLUE3, color:Colors.WHITE}}/>
+			</div>
 			<TenthTable tenths={tenths}/>
 			<NumberTenths numberTenths={numberTenths}/>
 		</div>);
