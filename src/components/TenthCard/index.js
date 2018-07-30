@@ -11,10 +11,33 @@ class TenthCard extends React.PureComponent {
     	val: PropTypes.number.isRequired
 	}
 
+	constructor(props){
+		super(props);
+		this.state = {
+			highlighted: false
+		};
+	}
+
+	componentWillReceiveProps(nextProps){
+		const { props: { quantity } } = this;
+		if (nextProps.quantity !== quantity) {
+			this.setState({
+				highlighted: true
+			}, () => {
+				setTimeout(() => {
+					this.setState({
+						highlighted: false
+					});
+				}, 500)
+			})
+		}
+	}
+
 	render() {
-		const { props: { val, quantity } } = this;
+		const { props: { val, quantity }, state: { highlighted } } = this;
+		console.log(highlighted)
 		return (<li className="tenth">
-			<Card>
+			<Card className={highlighted ? "green" : ""}>
 			    <h4>Tenth {val}</h4>
 			    <p>{quantity}</p>
 			</Card>

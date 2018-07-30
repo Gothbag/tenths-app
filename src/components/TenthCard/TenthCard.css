@@ -3,3 +3,7 @@
 	max-width: 10%;
 	display: inline-block;
 }
+
+li.tenth .green {
+	background: rgb(217, 240, 231);
+}
