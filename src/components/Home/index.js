@@ -5,8 +5,6 @@ import { Button } from "@blueprintjs/core";
 import moment from "moment";
 import { Colors } from "@blueprintjs/core";
 
-import "./Home.css";
-
 import TenthTable from "../TenthTable";
 import NumberTenths from "../NumberTenths";
 import { listConsts } from "../../reducers/lists";
@@ -37,8 +35,8 @@ class Home extends React.PureComponent {
 	render() {
 		const { handleAddTenth, props: { numberTenths, [TENTHS]: tenths } } = this;
 		return (<div>
-			<div className="add-tenth-row" large>
-				<Button onClick={handleAddTenth} text="Get a Tenth!" style={{background:Colors.BLUE3, color:Colors.WHITE}}/>
+			<div className="button-row">
+				<Button onClick={handleAddTenth} text="Get a Tenth!" style={{background:Colors.BLUE3, color:Colors.WHITE}} large/>
 			</div>
 			<TenthTable tenths={tenths}/>
 			<NumberTenths numberTenths={numberTenths}/>
