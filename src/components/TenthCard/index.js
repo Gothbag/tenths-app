@@ -18,9 +18,9 @@ class TenthCard extends React.PureComponent {
 		};
 	}
 
-	componentWillReceiveProps(nextProps){
+	componentDidUpdate(prevProps){
 		const { props: { quantity } } = this;
-		if (nextProps.quantity !== quantity) {
+		if (prevProps.quantity !== quantity) {
 			this.setState({
 				highlighted: true
 			}, () => {
@@ -35,7 +35,6 @@ class TenthCard extends React.PureComponent {
 
 	render() {
 		const { props: { val, quantity }, state: { highlighted } } = this;
-		console.log(highlighted)
 		return (<li className="tenth">
 			<Card className={highlighted ? "green" : ""}>
 			    <h4>Tenth {val}</h4>
